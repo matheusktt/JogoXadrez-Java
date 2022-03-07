@@ -2,32 +2,34 @@ package boardgame;
 
 public class Position {
 
-	private int linha;
-	private int coluna;
+	private int row;
+	private int column;
+
+//	Construtor
+	public Position(int row, int column) {
+		this.row = row;
+		this.column = column;
+	}
+
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public void setColumn(int column) {
+		this.column = column;
+	}
 	
-	public Position(int linha, int coluna) {
-		this.linha = linha;
-		this.coluna = coluna;
-	}
-
-	public int getLinha() {
-		return linha;
-	}
-
-	public void setLinha(int linha) {
-		this.linha = linha;
-	}
-
-	public int getColuna() {
-		return coluna;
-	}
-
-	public void setColuna(int coluna) {
-		this.coluna = coluna;
-	}
-		
+//	Imprimir a posição na tela
 	@Override
 	public String toString() {
-		return linha + "," + coluna;
+		return row + "," + column;
 	}
 }

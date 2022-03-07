@@ -10,6 +10,7 @@ public class Piece {
 		position = null;
 	}
 
+//	Uso interno na camada de tabuleiro "Boardgame"
 	protected Board getBoard() {
 		return board;
 	}
