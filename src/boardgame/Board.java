@@ -24,31 +24,31 @@ public class Board {
 	}
 	
 	public Piece piece(int row, int column) {
-		if(positionExists(row, column)) {
+		if (!positionExists(row, column)) {
 			throw new BoardException("Position not on the board");
-		}		
+		}
 		return pieces[row][column];
 	}
 	
-//	sobrecarga do método retornando as peças pela posições
+//	sobrecarga do mÃ©todo retornando as peÃ§as pela posiÃ§Ãµes
 	public Piece piece(Position position) {
-		if (positionExists(position)) {
+		if (!positionExists(position)) {
 			throw new BoardException("Position not on the board");
 		}
 		return pieces[position.getRow()][position.getColumn()];
 	}
 	
-//	atribuir a matriz a peça que está no argumento no método
-	public void placePice(Piece piece, Position position) {
+//	atribuir a matriz a peÃ§a que estÃ¡ no argumento no mÃ©todo
+	public void placePiece(Piece piece, Position position) {
 		if (thereIsAPiece(position)) {
-			throw new BoardException("There is already a piece on pisition " +  position);
+			throw new BoardException("There is already a piece on position " + position);
 		}
 		pieces[position.getRow()][position.getColumn()] = piece;
 		piece.position = position;
 	}
 	
 	private boolean positionExists(int row, int column) {
-		return row >= 0 && row < row && column >= 0 && column < columns;
+		return row >= 0 && row < rows && column >= 0 && column < columns;
 	}
 	
 	public boolean positionExists(Position position) {
@@ -56,7 +56,7 @@ public class Board {
 	}
 	
 	public boolean thereIsAPiece(Position position) {
-		if (positionExists(position)) {
+		if (!positionExists(position)) {
 			throw new BoardException("Position not on the board");
 		}
 		return piece(position) != null;
