@@ -24,7 +24,7 @@ public class ChessPosition {
 		return row;
 	}
 
-//	Converte posição da matrix linha 8 - linha, coluna - caractere (codigo unicode do caractere)
+//	Converte posição da matriz linha 8 - linha, coluna - caractere (codigo unicode do caractere)
 	protected Position toPosition() {
 		return new Position(8 - row, column - 'a');
 	}
